@@ -8,16 +8,16 @@ class LoginController {
 
     const user = Users.filter(user => user.email === email);
 
-    if (!user) {
+    if (!user[0]) {
       return res.status(400).json({ error: "User does not exist" });
     }
 
-    if (!user.password === password) {
+    if (!(user[0].password === password)) {
       return res.status(400).json({ errror: "Invalid password" });
     }
 
     return res.json({
-      ...user,
+      ...user[0],
       token: jwt.sign({ id: user.id }, SECRET, { expiresIn: "7d" })
     });
   }

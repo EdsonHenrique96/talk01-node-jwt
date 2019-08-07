@@ -1,7 +1,7 @@
 export default [
   {
     id: 254,
-    email: "edson.batista@gamil.com",
+    email: "edson.batista@gmail.com",
     name: "Edson Batista",
     password: "123456789",
     admin: "true"
